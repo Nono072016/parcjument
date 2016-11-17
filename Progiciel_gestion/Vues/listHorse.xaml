@@ -1,0 +1,33 @@
+﻿<Window x:Class="Progiciel_gestion.Vues.listHorse"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="listHorse" Height="614.752" Width="580.827" Background="#FFF9CD05">
+    <Grid x:Name="dateNaissance" Height="583" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Left" Height="100" Margin="241,0,0,0" VerticalAlignment="Top" Width="100" Source="/Progiciel_gestion;component/Images/jument.png" Grid.Column="1"/>
+        <DataGrid x:Name="listJument" HorizontalAlignment="Left" Margin="20,100,0,0" VerticalAlignment="Top" Height="272" Width="530" MouseDoubleClick="listJument_MouseDoubleClick" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding IdJument}" Width="20*" Header="Id" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding NomJument}" Width="40*" Header="Nom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding RaceJument}" Width="40*" Header="Race" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding DateNaissance,StringFormat=dd/MM/yyyy,ConverterCulture=fr-FR}" Width="30*" Header="Date de naissance" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding PoidsJument}" Width="30*" Header="Poids(kg)" IsReadOnly="True"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lbJument" Content="Label" HorizontalAlignment="Left" Margin="267,392,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.857,-0.562" Grid.Column="1" Height="16" Width="28"/>
+        <Label x:Name="lbNom" Grid.ColumnSpan="2" Content="Nom" HorizontalAlignment="Left" Margin="20,436,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNom" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="78,436,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lbRace" Grid.ColumnSpan="2" Content="Race" HorizontalAlignment="Left" Margin="346,439,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtRace" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="405,436,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lbPoids" Grid.ColumnSpan="2" Content="Poids" HorizontalAlignment="Left" Margin="20,497,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPoids" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="78,498,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DatePicker Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="401,497,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbDate" Grid.ColumnSpan="2" Content="Date de naissance" HorizontalAlignment="Left" Margin="276,498,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.607,-0.312"/>
+        <Button x:Name="btnModifier" Grid.ColumnSpan="2" Content="Modifier" HorizontalAlignment="Left" Margin="241,555,0,0" VerticalAlignment="Top" Width="75" Click="btnModifier_Click"/>
+
+    </Grid>
+</Window>
